@@ -15,7 +15,7 @@ git push -u origin master
 
 **Create and change a branch**
 
-Before creating a new branch, pull the changes from upstream. 
+Pull the changes from upstream and create a new branch. 
 ```bash
 git pull
 ```
