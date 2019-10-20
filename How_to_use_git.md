@@ -15,11 +15,11 @@ git push -u origin master
 
 **Create and change a branch**
 
-Pull the changes from upstream and create a new branch. 
+Pull the changes. 
 ```bash
 git pull
 ```
-Create the branch on your local machine and switch in this branch. 
+Create the branch and switch in this branch. 
 ```bash
 git branch new_branch
 git checkout new_branch
