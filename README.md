@@ -9,8 +9,8 @@
 
 ## Milestones
 * Milestone 1 - 21.10. um 16:45 - 17:30 Uhr
-* Milestone 2 - 11.11. um 16:00 - 16:45 Uhr
-* Milestone 3 - 16.11. um 16:00 - 16:30 Uhr
+* Milestone 2 - 18.11. um 16:00 - 16:45 Uhr
+* Milestone 3 - 09.12. um 16:00 - 16:30 Uhr
 * Milestone 4 - 13.01. um 16:00 - 16:30 Uhr 
 
 ## Links
