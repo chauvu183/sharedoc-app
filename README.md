@@ -7,6 +7,12 @@
 * [Documents](https://gitlab.informatik.haw-hamburg.de/acm321/sharedoc-app/tree/master/Documents/01_Requirements/01_Analyse)
 * [How to use Git](https://gitlab.informatik.haw-hamburg.de/acm321/sharedoc-app/blob/master/How_to_use_git.md)
 
+## Milestones
+* Milestone 1 - 21.10. um 16:45 - 17:30 Uhr
+* Milestone 2 - 11.11. um 16:00 - 16:45 Uhr
+* Milestone 3 - 16.11. um 16:00 - 16:30 Uhr
+* Milestone 4 - 13.01. um 16:00 - 16:30 Uhr 
+
 ## Links
 * [Präsentation](https://docs.google.com/presentation/d/1rslVkKotUgM8MrJTsWSXLtxtmuF1wf9uHDsZDGS-bOU/edit?usp=sharing)
 * [Owncloud](https://cloud.haw-hamburg.de/index.php/f/27438247)
