@@ -7,6 +7,15 @@
 * [Documents](https://gitlab.informatik.haw-hamburg.de/acm321/sharedoc-app/tree/master/Documents/01_Requirements/01_Analyse)
 * [How to use Git](https://gitlab.informatik.haw-hamburg.de/acm321/sharedoc-app/blob/master/How_to_use_git.md)
 
+## Simple Rules
+**You should never push changes directly to the master branch**
+
+* Create a new branch for every feature
+* Use Pull Requests to merge code to master
+    * Request a review from someone
+* Write good commit messages
+
+
 ## Milestones
 * Milestone 1 - 21.10. um 16:45 - 17:30 Uhr
 * Milestone 2 - 18.11. um 16:00 - 16:45 Uhr
