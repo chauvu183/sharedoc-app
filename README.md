@@ -26,11 +26,11 @@
 * [Präsentation](https://docs.google.com/presentation/d/1rslVkKotUgM8MrJTsWSXLtxtmuF1wf9uHDsZDGS-bOU/edit?usp=sharing)
 * [Owncloud](https://cloud.haw-hamburg.de/index.php/f/27438247)
 
-##Requirements for the Frontend
+## Requirements for the Frontend
 
-*Nodejs
-*Npm
-*Angular CLI
+* Nodejs
+* Npm
+* Angular CLI
 
 ## Development server
 
