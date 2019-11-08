@@ -7,6 +7,7 @@ git status
 ```
 
 **Add and Commit**
+
 Pull the changes. 
 ```bash
 git pull
