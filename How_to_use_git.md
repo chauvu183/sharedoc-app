@@ -8,7 +8,7 @@ git status
 
 **Add and Commit**
 
-Pull the changes. 
+Before you commit, pull the changes. 
 ```bash
 git pull
 ```
@@ -36,11 +36,4 @@ See all branches
 
 ```bash
 git branch -a
-```
-
-**Update and Merge**
-```bash
-git pull
-git merge <branch>
-
 ```
