@@ -47,16 +47,18 @@
 /*  }*/
 /*}*/
 
-* {
-  color: #2cf5ff !important;
+a {
+  text-decoration: none;
+  color: white;
 }
 
-.logo {
-  height: 80px;
+a:hover, a:active{
+  color: lightgray;
 }
 
-.navbar {
-  background-color: #1d1f20 !important;
+.nav-caption{
+  display: inline-block;
+  padding-left: 6px;
 }
 
 

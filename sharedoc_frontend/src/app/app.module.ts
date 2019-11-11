@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// @ts-ignore
+import { MatTabsModule} from '@angular/material';
+
 import { HeaderComponent } from './header/header.component';
 import { PinboardComponent } from './pinboard/pinboard.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { UploadComponent } from './upload/upload.component';
 import { UploadDisplayComponent } from './upload-display/upload-display.component';
+
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 
@@ -25,6 +28,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './data.service';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+// import { FeedbackComponent } from './feedback/feedback.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     UploadDisplayComponent,
     FooterComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+   // FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -51,11 +57,17 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatTabsModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(DataService),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    MatTabsModule,
+    MatSidenavModule
+  ]
 })
 export class AppModule { }

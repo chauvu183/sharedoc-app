@@ -3,13 +3,13 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService implements InMemoryDbService{
+export class DataService implements InMemoryDbService {
 
   constructor() { }
 
-  createDb(){
+  createDb() {
 
-    let  products =  [
+    const  products =  [
       {  id:  1,  name:  'Product 1' },
       {  id:  2,  name:  'Product 2' },
       {  id:  3,  name:  'Product 3' },
