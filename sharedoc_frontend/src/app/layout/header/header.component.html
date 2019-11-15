@@ -1,20 +1,4 @@
-<!--<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-    </button>
-    <h1>SimpleCRM</h1>
-    <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-button [routerLink]="'/activities'"> Activities </a>
-      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
-    </div>
-  </mat-toolbar-row>-->
-<mat-sidenav #sidenav role="navigation">
+<!--<mat-sidenav #sidenav role="navigation">
   <app-nav (sidenavClose)="sidenav.close()"></app-nav>
   </mat-sidenav>
   <mat-toolbar color="primary">
@@ -37,4 +21,5 @@
           <a routerLink="/pinboard">Pinboard</a>
       </ul>
     </div>
-  </mat-toolbar>
+  </mat-toolbar>-->
+<app-main-nav></app-main-nav>

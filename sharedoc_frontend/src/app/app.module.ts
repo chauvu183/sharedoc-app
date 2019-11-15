@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 // @ts-ignore
 import { MatTabsModule} from '@angular/material';
 
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from './layout/header/header.component';
 import { PinboardComponent } from './pinboard/pinboard.component';
 import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -22,15 +22,14 @@ import { UploadComponent } from './upload/upload.component';
 import { UploadDisplayComponent } from './upload-display/upload-display.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './layout/footer/footer.component';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './data.service';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+
 // import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule} from '@angular/forms';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import {MainNavComponent} from './layout/main-nav/main-nav.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +42,6 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     UploadComponent,
     UploadDisplayComponent,
     FooterComponent,
-    ProductListComponent,
-    ProductDetailComponent,
     MainNavComponent,
    // FeedbackComponent
   ],
