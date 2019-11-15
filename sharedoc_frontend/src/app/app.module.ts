@@ -30,6 +30,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 // import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule} from '@angular/forms';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {FormsModule} from '@angular/forms';
     FooterComponent,
     ProductListComponent,
     ProductDetailComponent,
+    MainNavComponent,
    // FeedbackComponent
   ],
   imports: [
