@@ -32,6 +32,7 @@ import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
+import { ForumComponent } from './forum/forum.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { RoutingModule } from './routing/routing.module';
     UploadDisplayComponent,
     FooterComponent,
     MainNavComponent,
+    ForumComponent,
    // FeedbackComponent
   ],
   imports: [

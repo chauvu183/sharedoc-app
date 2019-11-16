@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent} from '../homepage/homepage.component';
 import {UploadComponent} from '../upload/upload.component';
 import {UploadDisplayComponent} from '../upload-display/upload-display.component';
-import {HeaderComponent} from '../layout/header/header.component';
 import {PinboardComponent} from '../pinboard/pinboard.component';
 import {RegisterComponent} from '../register/register.component';
 

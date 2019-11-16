@@ -98,11 +98,10 @@ nav ul:last-of-type li:last-of-type a {
 header {
   background: url("assets/images/header-bg.jpg") ;
   background-position: center center;
-  background-size: 100% ;
   background-size: cover;
   position: relative;
   color: #fff;
-
+  height: 100%;
 }
 
 header .tagline {
@@ -165,7 +164,7 @@ header img {
   background: #1f303a;
   position: absolute;
   top: 0;
-  opacity: 0.7;
+  opacity: 0.9;
   z-index: 1;
 }
 
