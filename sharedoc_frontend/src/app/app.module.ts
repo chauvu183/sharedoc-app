@@ -30,6 +30,9 @@ import { DataService } from './data.service';
 // import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
+import {RouterModule} from '@angular/router';
+import { RoutingModule } from './routing/routing.module';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +63,13 @@ import {MainNavComponent} from './layout/main-nav/main-nav.component';
     HttpClientModule,
     InMemoryWebApiModule.forRoot(DataService),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {path: '', component: HomepageComponent},
+      {path: 'upload', component: UploadComponent},
+      {path: 'register' , component: RegisterComponent}
+    ]),
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
