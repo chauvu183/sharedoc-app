@@ -96,7 +96,7 @@ nav ul:last-of-type li:last-of-type a {
 ===========================
  */
 header {
-  background: url("assets/images/background2.jpg") ;
+  background: url("assets/images/background1-01.jpg") ;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -113,7 +113,7 @@ header .tagline {
 
 header .tagline h1 {
   color: #2cf5ff;
-  font-family: Merriweather;
+  font-family: Merriweather,"Open Sans", Verdana;
   font-weight: bold;
   padding-top: 5%;
   font-size: 5rem;
@@ -176,7 +176,7 @@ header img {
  */
 main {
   margin-top: 10%;
-  padding:0px;
+  padding:0;
 
 }
 main div h3, main div div h3 {
@@ -205,6 +205,9 @@ div.multi-section, div.multi-section-two {
   grid-gap: 5px;
   background: #1e2c36;
   color: #fff;
+}
+div.multi-section h3, div.multi-section-two h3{
+  color: #2cf5ff;
 }
 div.multi-section img, div.multi-section-two img{
   width: 80%;
