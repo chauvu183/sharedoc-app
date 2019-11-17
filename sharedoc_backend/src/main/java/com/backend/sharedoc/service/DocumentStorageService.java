@@ -23,13 +23,13 @@ public class DocumentStorageService {
 
     @Autowired
     public DocumentStorageService(DocumentStorageProperties documentStorageProperties) {
-        this.documentStorageLocation = Paths.get(documentStorageProperties.getUploadDir())
-                .toAbsolutePath().normalize();
+        this.documentStorageLocation = Paths.get(documentStorageProperties.getUploadDir()).toAbsolutePath().normalize();
 
         try {
             Files.createDirectories(this.documentStorageLocation);
         } catch (Exception ex) {
-            throw new DocumentStorageException("Could not create the directory where the uploaded files will be stored.", ex);
+            throw new DocumentStorageException(
+                    "Could not create the directory where the uploaded files will be stored.", ex);
         }
     }
 
@@ -39,7 +39,7 @@ public class DocumentStorageService {
 
         try {
             // Check if the file's name contains invalid characters
-            if(fileName.contains("..")) {
+            if (fileName.contains("..")) {
                 throw new DocumentStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
@@ -57,13 +57,28 @@ public class DocumentStorageService {
         try {
             Path filePath = this.documentStorageLocation.resolve(fileName).normalize();
             Resource resource = new UrlResource(filePath.toUri());
-            if(resource.exists()) {
+            if (resource.exists()) {
                 return resource;
             } else {
                 throw new DocumentNotFoundException("File not found " + fileName);
             }
         } catch (MalformedURLException ex) {
             throw new DocumentNotFoundException("File not found " + fileName, ex);
+        }
+    }
+
+    public void deleteDocument(String fileName) {
+        Path fullPath = Paths.get(documentStorageLocation.toString(), fileName);
+
+        try {
+            Resource resource = new UrlResource(fullPath.toUri());
+            if (resource.exists()) {
+                Files.delete(fullPath);
+            } else {
+                throw new DocumentNotFoundException("File not found " + fileName);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

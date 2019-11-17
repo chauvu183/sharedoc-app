@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,13 +32,10 @@ public class DocumentController {
     public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = documentStorageService.storeDocument(file);
 
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadDocument/")
-                .path(fileName)
-                .toUriString();
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/downloadDocument/")
+                .path(fileName).toUriString();
 
-        return new UploadDocumentResponse(fileName, fileDownloadUri, 
-                file.getContentType(), file.getSize());
+        return new UploadDocumentResponse(fileName, fileDownloadUri, file.getContentType(), file.getSize());
     }
 
     @PostMapping("/uploadMultipleDocuments")
@@ -68,4 +66,9 @@ public class DocumentController {
                 .body(resource);
     }
 
+    @DeleteMapping("uploadDocument/{fileName:.+}")
+    public ResponseEntity<Void> deleteFile(@PathVariable String fileName) {
+        documentStorageService.deleteDocument(fileName);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
 }
