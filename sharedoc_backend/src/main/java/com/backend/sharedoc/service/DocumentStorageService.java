@@ -9,12 +9,15 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Comparator;
 
 @Service
 public class DocumentStorageService {
@@ -79,6 +82,21 @@ public class DocumentStorageService {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void deleteDirectory(String folderName) throws IOException {
+        Path fullPath = Paths.get(documentStorageLocation.toString(), folderName);
+
+        try {
+            Resource resource = new UrlResource(fullPath.toUri());
+            if (resource.exists()) {
+                Files.walk(fullPath).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
+            } else {
+                throw new DocumentNotFoundException("File not found " + folderName);
+            }
+        } catch (MalformedURLException ex) {
+            throw new DocumentNotFoundException("File not found " + folderName, ex);
         }
     }
 }

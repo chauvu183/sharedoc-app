@@ -71,4 +71,11 @@ public class DocumentController {
         documentStorageService.deleteDocument(fileName);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
+
+    @DeleteMapping("deleteFolder/{folderName:.+}")
+    public ResponseEntity<Void> deleteFileDirectory(@PathVariable String folderName) throws IOException {
+
+        documentStorageService.deleteDirectory(folderName);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
 }
