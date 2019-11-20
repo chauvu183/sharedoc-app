@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/documents")
 public class DocumentController {
 
     private static final Logger logger = LoggerFactory.getLogger(DocumentController.class);
