@@ -58,8 +58,6 @@ Navigate to `http://localhost:8080/`
 
 ### Uploading and Downloading files
 
-Testing the APIs via Postman
-
 **Upload File**
 ```
 POST http://localhost:8080/uploadDocument
