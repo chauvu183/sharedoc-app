@@ -1,7 +1,7 @@
 package com.backend.sharedoc.service;
 
 import com.backend.sharedoc.exception.DocumentStorageException;
-import com.backend.sharedoc.exception.DocumentNotFoundException;
+import com.backend.sharedoc.exception.ResourceNotFoundException;
 import com.backend.sharedoc.property.DocumentStorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -63,10 +63,10 @@ public class DocumentStorageService {
             if (resource.exists()) {
                 return resource;
             } else {
-                throw new DocumentNotFoundException("File not found " + fileName);
+                throw new ResourceNotFoundException("File not found " + fileName);
             }
         } catch (MalformedURLException ex) {
-            throw new DocumentNotFoundException("File not found " + fileName, ex);
+            throw new ResourceNotFoundException("File not found " + fileName, ex);
         }
     }
 
@@ -78,7 +78,7 @@ public class DocumentStorageService {
             if (resource.exists()) {
                 Files.delete(fullPath);
             } else {
-                throw new DocumentNotFoundException("File not found " + fileName);
+                throw new ResourceNotFoundException("File not found " + fileName);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -93,10 +93,10 @@ public class DocumentStorageService {
             if (resource.exists()) {
                 Files.walk(fullPath).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
             } else {
-                throw new DocumentNotFoundException("File not found " + folderName);
+                throw new ResourceNotFoundException("File not found " + folderName);
             }
         } catch (MalformedURLException ex) {
-            throw new DocumentNotFoundException("File not found " + folderName, ex);
+            throw new ResourceNotFoundException("File not found " + folderName, ex);
         }
     }
 }
