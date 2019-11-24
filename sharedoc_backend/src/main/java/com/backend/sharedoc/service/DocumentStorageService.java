@@ -1,7 +1,7 @@
 package com.backend.sharedoc.service;
 
 import com.backend.sharedoc.exception.DocumentStorageException;
-import com.backend.sharedoc.exception.DocumentNotFoundException;
+import com.backend.sharedoc.exception.ResourceNotFoundException;
 import com.backend.sharedoc.property.DocumentStorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -60,10 +60,10 @@ public class DocumentStorageService {
             if(resource.exists()) {
                 return resource;
             } else {
-                throw new DocumentNotFoundException("File not found " + fileName);
+                throw new ResourceNotFoundException("File not found " + fileName);
             }
         } catch (MalformedURLException ex) {
-            throw new DocumentNotFoundException("File not found " + fileName, ex);
+            throw new ResourceNotFoundException("File not found " + fileName, ex);
         }
     }
 }
