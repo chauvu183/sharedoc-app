@@ -51,7 +51,7 @@ GET http://localhost:8080/downloadDocument/<Document.pdf>
 
 **Create a new entry**
 ```
-POST http://localhost:8080/pinboard/entries/`
+POST http://localhost:8080/pinboard/entries/
 ```
 
 **Create a new comment**
