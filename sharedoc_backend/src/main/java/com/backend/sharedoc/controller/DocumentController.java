@@ -1,10 +1,14 @@
 package com.backend.sharedoc.controller;
 
+import com.backend.sharedoc.exception.ResourceNotFoundException;
+import com.backend.sharedoc.model.DBDocument;
 import com.backend.sharedoc.payload.UploadDocumentResponse;
-import com.backend.sharedoc.service.DocumentStorageService;
+import com.backend.sharedoc.repository.DBDocumentRepository;
+import com.backend.sharedoc.service.DBDocumentStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -13,59 +17,52 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/documents")
 public class DocumentController {
 
-    private static final Logger logger = LoggerFactory.getLogger(DocumentController.class);
+  private static final Logger logger = LoggerFactory.getLogger(DocumentController.class);
 
-    @Autowired
-    private DocumentStorageService documentStorageService;
+  @Autowired
+  private DBDocumentStorageService DBDocumentStorageService;
 
-    @PostMapping("/uploadDocument")
-    public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
-        String fileName = documentStorageService.storeDocument(file);
+  @Autowired
+  private DBDocumentRepository dbCodumentRepository;
 
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadDocument/")
-                .path(fileName)
-                .toUriString();
+  @PostMapping("/uploadDocument")
+  public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
+    DBDocument dbFile = DBDocumentStorageService.storeDocument(file);
 
-        return new UploadDocumentResponse(fileName, fileDownloadUri, 
-                file.getContentType(), file.getSize());
-    }
+    String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/downloadDocument/")
+        .path(dbFile.getId()).toUriString();
 
-    @PostMapping("/uploadMultipleDocuments")
-    public List<UploadDocumentResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-        return Arrays.asList(files).stream().map(file -> uploadFile(file)).collect(Collectors.toList());
-    }
+    return new UploadDocumentResponse(dbFile.getDocumentName(), fileDownloadUri, file.getContentType(), file.getSize());
+  }
 
-    @GetMapping("/downloadDocument/{fileName:.+}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
-        // Load file as Resource
-        Resource resource = documentStorageService.loadDocumentAsResource(fileName);
+  @PostMapping("/uploadMultipleDocuments")
+  public List<UploadDocumentResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
+    return Arrays.asList(files).stream().map(file -> uploadFile(file)).collect(Collectors.toList());
+  }
 
-        // Try to determine file's content type
-        String contentType = null;
-        try {
-            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-        } catch (IOException ex) {
-            logger.info("Could not determine document type.");
-        }
+  @GetMapping("/downloadDocument/{fileId}")
+  public ResponseEntity<Resource> downloadFile(@PathVariable String fileId) {
+    // Load file from database
+    DBDocument dbFile = DBDocumentStorageService.getDocument(fileId);
 
-        // Fallback to the default content type if type could not be determined
-        if (contentType == null) {
-            contentType = "application/octet-stream";
-        }
+    return ResponseEntity.ok().contentType(MediaType.parseMediaType(dbFile.getDocumentType()))
+        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getDocumentName() + "\"")
+        .body(new ByteArrayResource(dbFile.getData()));
+  }
 
-        return ResponseEntity.ok().contentType(MediaType.parseMediaType(contentType))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-                .body(resource);
-    }
-
+  @DeleteMapping("/uploadDocument/{fileId}")
+  public ResponseEntity<?> deleteEntry(@PathVariable String fileId) {
+    return dbCodumentRepository.findById(fileId).map(document -> {
+      dbCodumentRepository.delete(document);
+      return ResponseEntity.ok().build();
+    }).orElseThrow(() -> new ResourceNotFoundException("Document not found with id " + fileId));
+  }
 }
