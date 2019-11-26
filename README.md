@@ -23,6 +23,10 @@ cd /keycloak-7.0.1
 cd bin
 ./standalone.sh -Djboss.socket.binding.port-offset=100
 ```
+###Steps:
+* After installing keycloak sucessfully go to the localhost:8180 => admin console => username=admin pass= admin
+* Create a new Realm and import the realm-export.json from the Project under Keycloak directory
+* For more info (https://www.keycloak.org/docs)
 
 ### Run the backend app
 ```bash
