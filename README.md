@@ -18,15 +18,17 @@ git clone https://gitlab.informatik.haw-hamburg.de/sharedoc-group/sharedoc-app.g
 ### Requirements for backend
 
 [Install Keycloak Server](https://www.keycloak.org/downloads.html)
+### Steps:
+*  After installing Keycloak sucessfully go to the bin Directory of Keycloak and run the following command to run Keycloak Server Locally
 ```bash
 cd /keycloak-7.0.1
 cd bin
 ./standalone.sh -Djboss.socket.binding.port-offset=100
 ```
-### Steps:
-* After installing keycloak sucessfully go to the localhost:8180 => admin console => username=admin pass= admin
-* Create a new Realm and import the realm-export.json from the Project under Keycloak directory
-* For more info (https://www.keycloak.org/docs)
+*  After running keycloak sucessfully, go to the localhost:8180 => admin console => username = admin , pass = admin
+*  Create a new Realm and import the realm-export.json file from the Project under Keycloak directory
+*  To run the the sharedoc-app the keycloak server has to run parallelly alongside front-end Server
+*  For more info (https://www.keycloak.org/docs)
 
 ### Run the backend app
 ```bash
