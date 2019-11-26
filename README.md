@@ -15,10 +15,10 @@ Description how to start the app in backend and frontend.
 git clone https://gitlab.informatik.haw-hamburg.de/sharedoc-group/sharedoc-app.git
 ```
 
-### Requirements for backend
+### How to run Keycloak Server
 
-[Install Keycloak Server](https://www.keycloak.org/downloads.html)
 ### Steps:
+* [Install Keycloak Server](https://www.keycloak.org/downloads.html)
 *  After installing Keycloak sucessfully go to the bin Directory of Keycloak and run the following command to run Keycloak Server Locally
 ```bash
 cd /keycloak-7.0.1
