@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 // @ts-ignore
 import { MatTabsModule} from '@angular/material';
-
 import {HeaderComponent} from './layout/header/header.component';
 import { PinboardComponent } from './pinboard/pinboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -30,6 +30,10 @@ import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
+
+import {MatFileUploadModule} from 'angular-material-fileupload';
+import {MatFileUpload} from 'angular-material-fileupload';
+
 
 
 @NgModule({

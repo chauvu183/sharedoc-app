@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient, HttpEventType} from '@angular/common/http';
 
 @Component({
   selector: 'app-upload',
@@ -19,11 +19,15 @@ export class UploadComponent implements OnInit {
   onUpload() {
     const fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
-    this.http.post('', fd,{
+    this.http.post('localhost://8080/endpoint name', fd, {
       reportProgress: true,
       observe: 'events'
     }).subscribe(event => {
-      console.log(event);
+      if (event.type === HttpEventType.UploadProgress) {
+        console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100)  + '%' );
+      } else if (event.type === HttpEventType.Response) {
+        console.log(event);
+      }
     });
 }
 }
