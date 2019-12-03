@@ -5,7 +5,7 @@ const keycloakConfig: KeycloakConfig = {
   realm: 'sharedoc-app',
   clientId: 'sharedoc-app-frontend',
   credentials: {
-    secret: '8d84a660-1bbe-4fc8-88f9-5cfab0b2d6a2'
+    secret: 'e0e9d6e8-a1cf-45e6-bf19-52a3852c46fa'
   }
 };
 
