@@ -1,0 +1,47 @@
+.dropdown{
+  padding: 15px;
+}
+
+/* You can add global styles to this file, and also import other style files */
+/*@import url(~node_modules/bootstrap/dist/css/bootstrap.min.css);*/
+@import url(~node_modules/font-awesome/css/font-awesome.css);
+
+html, body {
+  height: 100%;
+  color:#10777E !important;
+}
+
+body {
+  background-image: url("/assets/images/background2.jpg");
+  background-size: 100% 100%;
+  font-family: Merriweather, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.58;
+  color:#2cf5ff;
+}
+
+button {
+  background-color: #10777E !important;
+  border-color: #10777E !important;
+  color: white;
+  padding-top: 200px !important; 
+
+}
+
+.list-group-item{
+  cursor: pointer;
+}
+
+.input-label{
+  background:#10777E;
+  border:none;
+  cursor: pointer;
+}
+
+.input-label-lg{
+  background:#2cf5ff;
+  border:none;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}

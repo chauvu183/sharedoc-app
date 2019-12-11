@@ -1,1 +1,23 @@
-<p>upload-display works!</p>
+<body>
+  <div>
+  <p> Upload Display works! </p>
+  <div>
+    <span>Select Course of Study</span>
+    <select>
+      <option *ngFor="let courseOfStudy of coursesOfStudy">{{courseOfStudy}} </option>
+    </select>
+   <br> <span>Select Semester</span>
+    <select>
+      <option *ngFor="let semester of semesters">{{semester}} </option>
+    </select>
+    <br><span>Select Subject</span>
+    <select>
+      <option *ngFor="let subject of subjects">{{subject}} </option>
+    </select>
+    <br><span>Select Professor</span>
+    <select>
+      <option *ngFor="let professor of professors">{{professor}} </option>
+    </select>
+  </div>
+</div>
+</body>
