@@ -10,6 +10,7 @@
       <form id="singleUploadForm" name="singleUploadForm">
         <input type="file"  (change)="OnFileSelectedListener($event)" name="file" class="file-input" required />
         <button type="button" class="primary submit-btn" (click)="onUpload()">Submit</button>
+        <div [innerHtml]='msg'></div>
       </form>
       <div class="upload-response">
         <div id="singleFileUploadError"></div>
@@ -20,7 +21,7 @@
       <h3>Upload Multiple Files</h3>
       <form id="multipleUploadForm" name="multipleUploadForm">
         <input id="multipleFileUploadInput" type="file" name="files" class="file-input" multiple required />
-        <button type="submit" class="primary submit-btn">Submit</button>
+        <button type="submit" class="primary submit-btn" (click)="onMultiUpload()" >Submit</button>
       </form>
       <div class="upload-response">
         <div id="multipleFileUploadError"></div>

@@ -19,7 +19,8 @@ import { MatListModule } from '@angular/material/list';
 import { UploadComponent } from './upload/upload.component';
 import { UploadDisplayComponent } from './upload-display/upload-display.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 import {FooterComponent} from './layout/footer/footer.component';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
