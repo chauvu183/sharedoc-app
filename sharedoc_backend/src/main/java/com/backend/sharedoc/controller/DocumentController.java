@@ -20,7 +20,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
+//@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/documents")
 public class DocumentController {
