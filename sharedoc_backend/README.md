@@ -34,57 +34,40 @@ Navigate to [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 **Password** (look into the application.properties)
 
 # Testing the APIs
+```
+POST /documents/uploadDocument
 
-### Uploading and Downloading files
+POST /documents/uploadMultipleDocuments
 
-**Upload File**
-```
-POST http://localhost:8080/uploadDocument
-```
+GET /documents/downloadDocument/{fileId}
 
-**Download File**
-```
-GET http://localhost:8080/downloadDocument/<Document.pdf>
-```
+DELETE /documents//uploadDocument/{fileId}
 
-### Creating an entry / a comment
+POST /pinboard/entries
 
-**Create a new entry**
-```
-POST http://localhost:8080/pinboard/entries/
-```
+POST /pinboard/entries/{entryId}/comments
 
-**Create a new comment**
-```
-POST http://localhost:8080/pinboard/entries/{entryId}/comments
-```
+GET /pinboard/entries
 
-**Get all entries**
-```
-GET http://localhost:8080/pinboard/entries/
-```
+GET /pinboard/entries/{entryId}/comments
 
-**Get comments to an entry**
-```
-GET http://localhost:8080/pinboard/entries/{entryId}/comments
-```
+PUT /pinboard/entries/{entryId}
 
-**Update an entry**
-```
-PUT http://localhost:8080/pinboard/entries/{entryId}
-```
+PUT /pinboard/entries/{entryId}/comments/{commentId}
 
-**Update a comment**
-```
-PUT http://localhost:8080/pinboard/entries/{entryId}/comments/{commentId}
-```
+DELETE /pinboard/entries/{entryId}
 
-**Delete an entry**
-```
-DELETE http://localhost:8080/pinboard/entries/{entryId}
-```
-
-**Delete a comment**
-```
 DELETE http://localhost:8080/pinboard/entries/{entryId}/comments/{commentId}
 ```
+
+**Upload File**
+![upload file](sharedoc_backend/screenshots/upload_doc.png)
+
+**Download File**
+![download file](sharedoc_backend/screenshots/download_doc.png)
+
+**Create a new entry**
+![create entry](sharedoc_backend/screenshots/create_entry.png)
+
+**Create a new comment**
+![create comment](sharedoc_backend/screenshots/create_comment.png)
