@@ -1,4 +1,4 @@
-.dropdown{
+.dropdown {
   padding: 15px;
 }
 
@@ -6,52 +6,51 @@
 /*@import url(~node_modules/bootstrap/dist/css/bootstrap.min.css);*/
 @import url(~node_modules/font-awesome/css/font-awesome.css);
 
-html, body {
+html,
+body {
   height: 100%;
-  color:#10777E !important;
+  color: #10777e !important;
 }
 
 body {
-  background-image: url("/assets/images/background2.jpg");
+  background-image: url('/assets/images/background2.jpg');
   background-size: 100% 100%;
   font-family: Merriweather, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.58;
-  color:#2cf5ff;
+  color: #2cf5ff;
 }
 select {
-  padding:8px;
+  padding: 8px;
   margin-left: 10px;
 }
 option {
-  height:20px;
+  height: 20px;
   margin: auto;
   line-height: normal;
   padding: 20px;
-  
 }
 button {
-  background-color: #10777E !important;
-  border-color: #10777E !important;
+  background-color: #10777e !important;
+  border-color: #10777e !important;
   color: white;
-  padding-top: 10px !important; 
+  padding-top: 10px !important;
   padding: auto;
-
 }
 
-list-group-item{
+list-group-item {
   cursor: pointer;
 }
 
-input-label{
-  background:#10777E;
-  border:none;
+input-label {
+  background: #10777e;
+  border: none;
   cursor: pointer;
 }
 
-input-label-lg{
-  background:#2cf5ff;
-  border:none;
+input-label-lg {
+  background: #2cf5ff;
+  border: none;
   cursor: pointer;
   font-size: large;
   font-weight: bold;
@@ -59,7 +58,7 @@ input-label-lg{
 
 button {
   background: #10777e;
-  text-decoration:none;
+  text-decoration: none;
   padding: 15px;
   border-radius: 5px;
   text-align: center;
@@ -67,6 +66,21 @@ button {
   font-size: 1rem;
   width: 200px;
   height: auto;
-  border-color: #10777E !important;
+  border-color: #10777e !important;
   color: white;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.docs {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.doc {
+  border: 1px solid #808080;
 }

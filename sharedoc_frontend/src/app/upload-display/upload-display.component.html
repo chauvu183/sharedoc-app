@@ -1,24 +1,32 @@
-<body>
-  <div>
-    <div>
-      <h1 style="margin-top: 0">Filter by</h1>
+<div class="flex">
+  <div class="controls">
+    <h1 style="margin-top: 0">Filter by</h1>
     <span>Select Course of Study</span>
     <select>
-      <option *ngFor="let courseOfStudy of coursesOfStudy">{{courseOfStudy}} </option>
+      <option *ngFor="let courseOfStudy of coursesOfStudy"
+        >{{ courseOfStudy }}
+      </option>
     </select>
-   <br> <span>Select Semester</span>
+    <br />
+    <span>Select Semester</span>
     <select>
-      <option *ngFor="let semester of semesters">{{semester}} </option>
+      <option *ngFor="let semester of semesters">{{ semester }} </option>
     </select>
-    <br><span>Select Subject</span>
+    <br /><span>Select Subject</span>
     <select>
-      <option *ngFor="let subject of subjects">{{subject}} </option>
+      <option *ngFor="let subject of subjects">{{ subject }} </option>
     </select>
-    <br><span>Select Professor</span>
+    <br /><span>Select Professor</span>
     <select>
-      <option *ngFor="let professor of professors">{{professor}} </option>
+      <option *ngFor="let professor of professors">{{ professor }} </option>
     </select>
+    <br />
+    <button>Apply filter</button>
   </div>
-  <button>Apply filter</button>
+  <div class="docs">
+    <div class="doc" *ngFor="let document of documents">
+      <span> {{ document.title }}</span>
+      <a href="{{ document.url }}">{{ document.url }}</a>
+    </div>
+  </div>
 </div>
-</body>
