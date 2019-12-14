@@ -24,6 +24,32 @@ cd bin
 ./standalone.sh -Djboss.socket.binding.port-offset=100
 ```
 
+You need to create a database sharedoc_admin in MySQL.
+
+```bash
+# Start mysql server
+brew services start mysql
+
+# Log into mysql as root
+mysql -u root
+
+# Creating and Selecting a Database
+CREATE DATABASE sharedoc_app;
+
+# Create a new User
+CREATE USER 'sharedoc_admin'@'localhost' IDENTIFIED BY 'admin';
+
+# Grant privileges to the new user
+GRANT ALL PRIVILEGES ON sharedoc_app . * TO 'sharedoc_admin'@'localhost';
+
+FLUSH PRIVILEGES;
+
+# Log into mysql as sharedoc_admin
+mysql -u sharedoc_admin -p
+
+USE sharedoc_app
+```
+
 ### Run the backend app
 ```bash
 cd /sharedoc_backend
