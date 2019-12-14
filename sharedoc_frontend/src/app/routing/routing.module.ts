@@ -5,7 +5,6 @@ import {HomepageComponent} from '../homepage/homepage.component';
 import {UploadComponent} from '../upload/upload.component';
 import {UploadDisplayComponent} from '../upload-display/upload-display.component';
 import {PinboardComponent} from '../pinboard/pinboard.component';
-import {RegisterComponent} from '../register/register.component';
 
 
 const routes: Routes = [
@@ -17,14 +16,6 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'login',
-    component: RegisterComponent
   },
   {
     path: 'pinboard',

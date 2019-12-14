@@ -8,11 +8,9 @@ import { MatTabsModule} from '@angular/material';
 
 import {HeaderComponent} from './layout/header/header.component';
 import { PinboardComponent } from './pinboard/pinboard.component';
-import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material';
-import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -40,9 +38,7 @@ import { RoutingModule } from './routing/routing.module';
     AppComponent,
     HeaderComponent,
     PinboardComponent,
-    RegisterComponent,
     HomepageComponent,
-    NavComponent,
     UploadComponent,
     UploadDisplayComponent,
     FooterComponent,
@@ -69,7 +65,6 @@ import { RoutingModule } from './routing/routing.module';
     RouterModule.forRoot([
       {path: '', component: HomepageComponent},
       {path: 'upload', component: UploadComponent},
-      {path: 'register' , component: RegisterComponent}
     ]),
     RoutingModule
   ],
