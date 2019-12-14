@@ -1,7 +1,7 @@
 <body>
   <div>
-  <p> Upload Display works! </p>
-  <div>
+    <div>
+      <h1 style="margin-top: 0">Filter by</h1>
     <span>Select Course of Study</span>
     <select>
       <option *ngFor="let courseOfStudy of coursesOfStudy">{{courseOfStudy}} </option>
@@ -19,5 +19,6 @@
       <option *ngFor="let professor of professors">{{professor}} </option>
     </select>
   </div>
+  <button>Apply filter</button>
 </div>
 </body>
