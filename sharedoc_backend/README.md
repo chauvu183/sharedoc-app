@@ -51,7 +51,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-# Testing the APIs
+# Testing the APIs with Postman
 ```
 POST /documents/uploadDocument
 
@@ -89,3 +89,25 @@ DELETE http://localhost:8080/pinboard/entries/{entryId}/comments/{commentId}
 
 **Create a new comment**
 ![create comment](sharedoc_backend/screenshots/create_comment.png)
+```
+```
+### Viewing Postman Tests in the sharedoc_app database
+
+After you have tested the APIs in Postman, here's how to lool it up in the sharedoc_app database.
+
+```bash
+# Start mysql server
+brew services start mysql
+
+# Log into mysql as sharedoc_admin
+mysql -u sharedoc_admin -p
+
+# Change to the sharedoc_app database
+USE sharedoc_app
+
+# Display all tables in your database
+show tables;
+
+# Display table's content
+SELECT * FROM <table_name>;
+```
