@@ -24,9 +24,9 @@
     <button>Apply filter</button>
   </div>
   <div class="docs">
-    <div class="doc" *ngFor="let t of todos">
-      <h3>{{ t.title }}</h3>
-      <a href="/assets/pdfs/PDF1.pdf" target="_blank"
+    <div class="doc" *ngFor="let d of dokumente">
+      <h3>{{ d.name }}</h3>
+      <a href="localhost:8080/documents/bp.pdf" target="_blank"
         ><button>
           Open
         </button></a

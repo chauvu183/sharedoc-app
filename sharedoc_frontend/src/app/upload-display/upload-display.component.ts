@@ -8,20 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class UploadDisplayComponent implements OnInit {
   constructor() {}
 
-  todos = [];
+  dokumente = [];
 
   ngOnInit() {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('localhost:8080/documents')
       .then(response => response.json())
-      .then(json => (this.todos = json));
+      .then(json => (this.dokumente = json));
   }
 
   coursesOfStudy = ['AI'];
   semesters = ['1.', '2.', '3.', '4.', '5.', '6.'];
   subjects = ['subject1', 'subject2', 'subject3', 'subject4'];
   professors = ['Heitsch', 'Neitzke', 'Wendholt', 'Klauck'];
-  documents = [
-    { name: 'Alice in Wonderland', id: 'someid' },
-    { name: 'Avengers: Endgame', id: 'someotherid' },
-  ];
 }
