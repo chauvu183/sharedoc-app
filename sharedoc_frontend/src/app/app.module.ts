@@ -1,15 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// @ts-ignore
-import { MatTabsModule} from '@angular/material';
 
 import {HeaderComponent} from './layout/header/header.component';
 import { PinboardComponent } from './pinboard/pinboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material';
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,14 +21,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {FooterComponent} from './layout/footer/footer.component';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DataService } from './data.service';
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 
 // import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
+import {MatTabsModule} from "@angular/material";
+import {MatMenuModule} from "@angular/material";
+
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { RoutingModule } from './routing/routing.module';
     MatListModule,
     MatTabsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataService),
+    // InMemoryWebApiModule.forRoot(DataService, {
+    //   passThruUnknownUrl: true
+    // }),
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([

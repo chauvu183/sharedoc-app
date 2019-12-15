@@ -93,8 +93,10 @@ input[type="file"] {
   border: 1px solid #128ff2;
   border-radius: 4px;
   color: #949494;;
-  padding: 6px;
+  padding: 9px;
   max-width: 100%;
+  float: left;
+
 }
 
 .file-input {
@@ -103,9 +105,10 @@ input[type="file"] {
 
 .submit-btn {
   display: block;
-  margin-top: 15px;
+  padding-top: 10px;
   min-width: 100px;
 }
+
 
 @media screen and (min-width: 500px) {
   .file-input {
@@ -114,8 +117,8 @@ input[type="file"] {
 
   .submit-btn {
     display: inline-block;
-    margin-top: 0;
-    margin-left: 10px;
+    padding-top: 10px;
+    margin-left: 5px;
   }
 }
 
@@ -142,7 +145,9 @@ input[type="file"] {
 .upload-header h2 {
   font-weight: 500;
 }
-
+.progress{
+  float: bottom;
+}
 .single-upload {
 
   padding-bottom: 20px;

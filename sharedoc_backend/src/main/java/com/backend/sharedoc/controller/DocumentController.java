@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@CrossOrigin(origins = " http://localhost:4200/upload")
+@CrossOrigin(origins = " http://localhost:4200")
 @RequestMapping("/documents")
 public class DocumentController {
 
