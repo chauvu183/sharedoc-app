@@ -93,7 +93,7 @@ DELETE http://localhost:8080/pinboard/entries/{entryId}/comments/{commentId}
 ```
 ### Viewing Postman Tests in the sharedoc_app database
 
-After you have tested the APIs in Postman, here's how to lool it up in the sharedoc_app database.
+After you have tested the APIs in Postman, here's how to look it up in the sharedoc_app database.
 
 ```bash
 # Start mysql server
