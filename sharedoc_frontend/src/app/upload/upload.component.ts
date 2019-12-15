@@ -23,6 +23,7 @@ export class UploadComponent implements OnInit {
   OnFileSelectedListener(event) {
     this.selectedFiles = event.target.files;
   }
+
   onUpload() {
     this.progress.percentage = 0;
     this.currentFileUpload = this.selectedFiles.item(0);
@@ -61,7 +62,7 @@ export class UploadComponent implements OnInit {
         }
         );
       }
-      this.selectedFiles = null;
+      this.selectedFiles = undefined;
     }
 
   }
