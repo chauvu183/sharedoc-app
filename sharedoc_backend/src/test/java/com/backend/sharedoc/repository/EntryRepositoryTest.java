@@ -1,4 +1,4 @@
-package com.backend.sharedoc;
+package com.backend.sharedoc.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -47,14 +47,14 @@ public class EntryRepositoryTest {
   }
 
   @Test
-  public void findAllEntries() {
+  public void testFindAllEntries() {
     Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
     entryRepository.save(entry);
     assertNotNull(entryRepository.findAll());
   }
 
   @Test
-  public void deletByEntryIdTest() {
+  public void testDeletByEntryId() {
     Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
     Entry savedEntry = entryRepository.save(entry);
     entryRepository.deleteById(savedEntry.getId());
