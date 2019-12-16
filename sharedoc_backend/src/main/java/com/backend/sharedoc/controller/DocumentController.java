@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,18 @@ public class DocumentController {
 
   @Autowired
   private DBDocumentRepository dbCodumentRepository;
+
+  @GetMapping
+  public ResponseEntity<?> getDbDocuments() {
+    List<DBDocument> dbDocuments = dbCodumentRepository.findAll();
+    return new ResponseEntity<>(dbDocuments , HttpStatus.OK);
+  }
+
+  // @GetMapping(value = "/{fileId}")
+  //   public ResponseEntity<Resource> getDbDocument(@PathVariable String fileId) {
+  //     DBDocument dbFile = DBDocumentStorageService.getDocument(fileId);
+  //     return ResponseEntity.ok();
+  //   }
 
   @PostMapping("/uploadDocument")
   public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
