@@ -14,6 +14,32 @@ cd bin
 ./standalone.sh -Djboss.socket.binding.port-offset=100
 ```
 
+You need to create a database sharedoc_admin in MySQL.
+
+```bash
+# Start mysql server
+brew services start mysql
+
+# Log into mysql as root
+mysql -u root
+
+# Creating and Selecting a Database
+CREATE DATABASE sharedoc_app;
+
+# Create a new User
+CREATE USER 'sharedoc_admin'@'localhost' IDENTIFIED BY 'admin';
+
+# Grant privileges to the new user
+GRANT ALL PRIVILEGES ON sharedoc_app . * TO 'sharedoc_admin'@'localhost';
+
+FLUSH PRIVILEGES;
+
+# Log into mysql as sharedoc_admin
+mysql -u sharedoc_admin -p
+
+USE sharedoc_app
+```
+
 ### Run the backend app
 ```bash
 cd /sharedoc_backend
@@ -25,15 +51,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-Navigate to [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
-
-**JDBC URL** jdbc:h2:mem:sharedocdb
-
-**User** sharedoc
-
-**Password** (look into the application.properties)
-
-# Testing the APIs
+# Testing the APIs with Postman
 ```
 POST /documents/uploadDocument
 
@@ -71,3 +89,25 @@ DELETE http://localhost:8080/pinboard/entries/{entryId}/comments/{commentId}
 
 **Create a new comment**
 ![create comment](sharedoc_backend/screenshots/create_comment.png)
+```
+```
+### Viewing Postman Tests in the sharedoc_app database
+
+After you have tested the APIs in Postman, here's how to look it up in the sharedoc_app database.
+
+```bash
+# Start mysql server
+brew services start mysql
+
+# Log into mysql as sharedoc_admin
+mysql -u sharedoc_admin -p
+
+# Change to the sharedoc_app database
+USE sharedoc_app
+
+# Display all tables in your database
+show tables;
+
+# Display table's content
+SELECT * FROM <table_name>;
+```
