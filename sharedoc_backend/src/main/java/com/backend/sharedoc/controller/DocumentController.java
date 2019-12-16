@@ -40,12 +40,6 @@ public class DocumentController {
     return new ResponseEntity<>(dbDocuments , HttpStatus.OK);
   }
 
-  // @GetMapping(value = "/{fileId}")
-  //   public ResponseEntity<Resource> getDbDocument(@PathVariable String fileId) {
-  //     DBDocument dbFile = DBDocumentStorageService.getDocument(fileId);
-  //     return ResponseEntity.ok();
-  //   }
-
   @PostMapping("/uploadDocument")
   public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
     DBDocument dbFile = DBDocumentStorageService.storeDocument(file);
@@ -63,7 +57,6 @@ public class DocumentController {
 
   @GetMapping("/downloadDocument/{fileId}")
   public ResponseEntity<Resource> downloadFile(@PathVariable String fileId) {
-    // Load file from database
     DBDocument dbFile = DBDocumentStorageService.getDocument(fileId);
 
     return ResponseEntity.ok().contentType(MediaType.parseMediaType(dbFile.getDocumentType()))
