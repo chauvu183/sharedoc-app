@@ -8,18 +8,31 @@ import {HttpClient, HttpEventType} from '@angular/common/http';
 })
 export class UploadComponent implements OnInit {
   selectedFile = null;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
   }
 
   OnFileSelectedListener(event) {
     this.selectedFile = event.target.files[0];
+    console.log('testing', this.selectedFile);
   }
+
+
+/*  toBase64() {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(this.selectedFile);
+    reader.onload = () => resolve(reader.result );
+    reader.onerror = error => reject(error);
+  });
+}
+*/
   onUpload() {
     const fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
-    this.http.post('localhost://8080/endpoint name', fd, {
+    this.http.post('http://localhost:8080/documents/uploadDocument', fd, {
       reportProgress: true,
       observe: 'events'
     }).subscribe(event => {
@@ -30,4 +43,5 @@ export class UploadComponent implements OnInit {
       }
     });
 }
+
 }

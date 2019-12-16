@@ -22,17 +22,11 @@ import { UploadDisplayComponent } from './upload-display/upload-display.componen
 import {HttpClientModule} from '@angular/common/http';
 import {FooterComponent} from './layout/footer/footer.component';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DataService } from './data.service';
-
 // import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
-
-import {MatFileUploadModule} from 'angular-material-fileupload';
-import {MatFileUpload} from 'angular-material-fileupload';
 
 
 
@@ -61,7 +55,7 @@ import {MatFileUpload} from 'angular-material-fileupload';
     MatListModule,
     MatTabsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataService),
+
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
