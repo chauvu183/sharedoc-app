@@ -1,47 +1,46 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpEventType} from '@angular/common/http';
+import { Component,OnInit } from '@angular/core';
+import {HttpEventType, HttpResponse} from '@angular/common/http';
+import { FileService } from "./file.service";
+
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css']
 })
+
 export class UploadComponent implements OnInit {
-  selectedFile = null;
-  constructor(private http: HttpClient) {
-  }
+
+  selectedFiles: FileList;
+  currentFileUpload: File;
+  progress: { percentage: number } = { percentage: 0 };
+  files = [];
+
+  constructor(private uploadService: FileService) { }
 
   ngOnInit() {
   }
 
   OnFileSelectedListener(event) {
-    this.selectedFile = event.target.files[0];
-    console.log('testing', this.selectedFile);
+    this.selectedFiles = event.target.files;
   }
 
 
-/*  toBase64() {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(this.selectedFile);
-    reader.onload = () => resolve(reader.result );
-    reader.onerror = error => reject(error);
-  });
-}
-*/
   onUpload() {
-    const fd = new FormData();
-    fd.append('file', this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost:8080/documents/uploadDocument', fd, {
-      reportProgress: true,
-      observe: 'events'
-    }).subscribe(event => {
+    this.progress.percentage = 0;
+
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.uploadService.uploadFile(this.currentFileUpload).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress) {
-        console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100)  + '%' );
-      } else if (event.type === HttpEventType.Response) {
-        console.log(event);
+        this.progress.percentage = Math.round(100 * event.loaded / event.total);
+      } else if (event instanceof HttpResponse) {
+        console.log('File is completely uploaded!');
       }
     });
-}
+    this.selectedFiles = undefined
+  }
+
+
+
 
 }

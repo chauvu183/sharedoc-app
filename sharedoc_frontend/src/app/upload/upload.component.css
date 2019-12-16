@@ -13,26 +13,17 @@ body {
   color:#2cf5ff;
 }
 
-/*.bg {*/
-/*  background-image: url("../../assets/images/background2.jpg");*/
-/*  !* Full height *!*/
-/*  background-size: 100% auto;*/
-/*  background-position: center center;*/
-/*  background-repeat: no-repeat;*/
-/*  background-attachment: fixed;*/
-/*  background-size: cover;*/
-/*}*/
 .material-icons.md-48 { font-size: 48px; }
 
 body:before {
-    height: 50%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #263842;
-    content: "";
-    z-index: 0;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #263842;
+  content: "";
+  z-index: 0;
 }
 
 .clearfix:after {
@@ -93,8 +84,10 @@ input[type="file"] {
   border: 1px solid #128ff2;
   border-radius: 4px;
   color: #949494;;
-  padding: 6px;
+  padding: 9px;
   max-width: 100%;
+  float: left;
+
 }
 
 .file-input {
@@ -103,9 +96,10 @@ input[type="file"] {
 
 .submit-btn {
   display: block;
-  margin-top: 15px;
+  padding-top: 10px;
   min-width: 100px;
 }
+
 
 @media screen and (min-width: 500px) {
   .file-input {
@@ -114,8 +108,8 @@ input[type="file"] {
 
   .submit-btn {
     display: inline-block;
-    margin-top: 0;
-    margin-left: 10px;
+    padding-top: 10px;
+    margin-left: 5px;
   }
 }
 
@@ -142,15 +136,13 @@ input[type="file"] {
 .upload-header h2 {
   font-weight: 500;
 }
-
+.progress{
+  float: bottom;
+}
 .single-upload {
-
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e8e8e8;
 }
 
-.upload-response {
-  overflow-x: hidden;
-  word-break: break-all;
-}
+
