@@ -19,11 +19,6 @@ public class Entry extends AuditModel {
   @Column(columnDefinition = "text")
   private String description;
 
-  public Entry(String title, String description) {
-    this.title = title;
-    this.description = description;
-  }
-
   public Long getId() {
     return id;
   }

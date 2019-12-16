@@ -18,20 +18,11 @@ public class EntryRepositoryTest {
   private EntryRepository entryRepository;
 
   @Test
-  public void testSaveEntry() {
-
-    Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
-    entryRepository.save(entry);
-    Entry entry2 = entryRepository.findByTitle("RN Scripte");
-    assertNotNull(entry);
-    assertEquals(entry2.getTitle(), entry.getTitle());
-    assertEquals(entry2.getDescription(), entry.getDescription());
-  }
-
-  @Test
   public void testGetEmployee() {
 
-    Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
+    Entry entry = new Entry();
+    entry.setTitle("RN Scripte");
+    entry.setDescription("You can contact me at student@haw-hamburg.de");
     entryRepository.save(entry);
     Entry entry2 = entryRepository.findByTitle("RN Scripte");
     assertNotNull(entry);
@@ -41,21 +32,27 @@ public class EntryRepositoryTest {
 
   @Test
   public void testDeleteEntry() {
-    Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
+    Entry entry = new Entry();
+    entry.setTitle("RN Scripte");
+    entry.setDescription("You can contact me at student@haw-hamburg.de");
     entryRepository.save(entry);
     entryRepository.delete(entry);
   }
 
   @Test
   public void testFindAllEntries() {
-    Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
+    Entry entry = new Entry();
+    entry.setTitle("RN Scripte");
+    entry.setDescription("You can contact me at student@haw-hamburg.de");
     entryRepository.save(entry);
     assertNotNull(entryRepository.findAll());
   }
 
   @Test
   public void testDeletByEntryId() {
-    Entry entry = new Entry("RN Scripte", "You can contact me at student@haw-hamburg.de");
+    Entry entry = new Entry();
+    entry.setTitle("RN Scripte");
+    entry.setDescription("You can contact me at student@haw-hamburg.de");
     Entry savedEntry = entryRepository.save(entry);
     entryRepository.deleteById(savedEntry.getId());
   }

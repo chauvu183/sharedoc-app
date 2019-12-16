@@ -35,6 +35,4 @@ public class DBDocumentRepositoryTest {
     DBDocument savedDocument = dbDocumentRepository.save(document);
     dbDocumentRepository.deleteById(savedDocument.getId());
   }
-
-
 }
