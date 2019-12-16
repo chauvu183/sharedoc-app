@@ -21,9 +21,12 @@ public class DBDocument {
 
   public DBDocument() {
 
+    super();
+
   }
 
   public DBDocument(String documentName, String documentType, byte[] data) {
+    super();
     this.documentName = documentName;
     this.documentType = documentType;
     this.data = data;
