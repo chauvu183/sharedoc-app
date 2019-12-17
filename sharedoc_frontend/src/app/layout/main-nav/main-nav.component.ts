@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { KeycloakProfile } from 'keycloak-js';
+import { KeycloakService} from "keycloak-angular";
+
 
 @Component({
   selector: 'app-main-nav',
@@ -9,6 +12,8 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./main-nav.component.css']
 })
 export class MainNavComponent {
+  userDetails: KeycloakProfile;
+ loggedIn:boolean;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -16,6 +21,17 @@ export class MainNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,private keycloakService:KeycloakService) {
+  }
 
+  isLoggedIn(){
+    if(this.keycloakService.isLoggedIn()){
+      return this.loggedIn= true;
+    }
+  }
+
+  async Logout() {
+    await this.keycloakService.logout()
+
+  }
 }

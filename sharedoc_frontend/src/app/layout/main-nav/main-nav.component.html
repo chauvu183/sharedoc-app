@@ -8,8 +8,6 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/upload">Upload</a>
       <a mat-list-item routerLink="/pinboard">Pinboard</a>
-      <a mat-list-item routerLink="/register">Register</a>
-      <a mat-list-item routerLink="/login">Login</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -32,8 +30,7 @@
           <li><a routerLink="/uploadDisplay">Document</a></li>
           <li><a routerLink="/upload">Upload</a></li>
           <li><a routerLink="/pinboard">Pinboard</a></li>
-          <li><a routerLink="/register">Register</a></li>
-          <li><a routerLink="/login">Login</a></li>
+          <button (click)= Logout()>Logout</button>
         </ul>
       </nav>
     </mat-toolbar>
