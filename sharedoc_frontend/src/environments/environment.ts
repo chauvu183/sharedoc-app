@@ -3,7 +3,7 @@ import {KeycloakConfig} from 'keycloak-angular';
 
 //secret not using right now but using public
 const keycloakConfig: KeycloakConfig = {
-  url: 'http://localhost:8080/auth',
+  url: 'http://141.22.30.102/auth',
   realm: 'sharedoc-app',
   clientId: 'sharedoc-app-frontend',
   credentials: {

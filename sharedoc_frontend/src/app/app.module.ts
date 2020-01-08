@@ -27,6 +27,7 @@ import {FooterComponent} from './layout/footer/footer.component';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {DataService} from './data.service';
 
+import {ForumComponent} from "./forum/forum.component";
 import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
@@ -43,6 +44,7 @@ import {initializer} from './utils/app-init';
     UploadDisplayComponent,
     FooterComponent,
     MainNavComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,
