@@ -24,9 +24,6 @@ import {UploadDisplayComponent} from './upload-display/upload-display.component'
 import {HttpClientModule} from '@angular/common/http';
 import {FooterComponent} from './layout/footer/footer.component';
 
-import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {DataService} from './data.service';
-
 import {ForumComponent} from "./forum/forum.component";
 import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
@@ -59,7 +56,6 @@ import {initializer} from './utils/app-init';
     MatListModule,
     MatTabsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataService),
     AppRoutingModule,
     FormsModule,
     KeycloakAngularModule,

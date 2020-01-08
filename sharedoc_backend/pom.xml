@@ -12,7 +12,7 @@
 
 	<groupId>com.backend</groupId>
 	<artifactId>sharedoc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>backend</version>
 	<packaging>jar</packaging>
 
 	<name>sharedoc</name>
@@ -70,6 +70,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
