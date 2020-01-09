@@ -8,16 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class UploadDisplayComponent implements OnInit {
   constructor() {}
 
-  dokumente = [];
+  todos = [];
 
   ngOnInit() {
-    fetch('localhost:8080/documents')
+    fetch('http://sharedoc.informatik.haw-hamburg.de/spring/documents')
       .then(response => response.json())
-      .then(json => (this.dokumente = json));
+      .then(json => {
+        this.todos = json;
+        console.log(json);
+      });
   }
 
   coursesOfStudy = ['AI'];
   semesters = ['1.', '2.', '3.', '4.', '5.', '6.'];
   subjects = ['subject1', 'subject2', 'subject3', 'subject4'];
   professors = ['Heitsch', 'Neitzke', 'Wendholt', 'Klauck'];
+  documents = [
+    { name: 'Alice in Wonderland', id: 'someid' },
+    { name: 'Avengers: Endgame', id: 'someotherid' },
+  ];
 }
