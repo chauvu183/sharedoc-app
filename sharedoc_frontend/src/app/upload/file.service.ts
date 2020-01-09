@@ -40,7 +40,7 @@ export class FileService {
       console.log(formdata);
     }
 
-    const req = new HttpRequest('POST', 'http://localhost:8080/documents/uploadDocument', formdata, {
+    const req = new HttpRequest('POST', 'http://localhost:8080/documents/uploadMultipleDocuments', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
