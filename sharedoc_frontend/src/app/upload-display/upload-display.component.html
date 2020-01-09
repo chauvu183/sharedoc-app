@@ -1,36 +1,11 @@
-<div class="flex">
-  <div class="controls">
-    <h1 style="margin-top: 0">Filter by</h1>
-    <span>Select Course of Study</span>
-    <select>
-      <option *ngFor="let courseOfStudy of coursesOfStudy"
-        >{{ courseOfStudy }}
-      </option>
-    </select>
-    <br />
-    <span>Select Semester</span>
-    <select>
-      <option *ngFor="let semester of semesters">{{ semester }} </option>
-    </select>
-    <br /><span>Select Subject</span>
-    <select>
-      <option *ngFor="let subject of subjects">{{ subject }} </option>
-    </select>
-    <br /><span>Select Professor</span>
-    <select>
-      <option *ngFor="let professor of professors">{{ professor }} </option>
-    </select>
-    <br />
-    <button>Apply filter</button>
-  </div>
-  <div class="docs">
-    <div class="doc" *ngFor="let d of dokumente">
-      <h3>{{ d.name }}</h3>
-      <a href="localhost:8080/documents" target="_blank"
-        ><button>
-          Open
-        </button></a
-      >
-    </div>
+<div class="docs">
+  <div class="doc" *ngFor="let t of todos">
+    <h3>{{ t.name }}</h3>
+    <h4>{{ t.type}}</h4>
+    <a href="http://141.22.30.102/spring/documents/downloadDocuments/{{t.fileId}}" target="_blank"
+      ><button>
+        Open
+      </button></a
+    >
   </div>
 </div>
