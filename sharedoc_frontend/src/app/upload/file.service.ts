@@ -20,7 +20,7 @@ export class FileService {
 
     formdata.append('file', file);
 
-    const req = new HttpRequest('POST', 'http://localhost:8080/documents/uploadDocument', formdata, {
+    const req = new HttpRequest('POST', 'http://141.22.30.102/spring/documents/uploadDocument', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -38,7 +38,7 @@ export class FileService {
 
     formdata.append('file', file);
 
-    const req = new HttpRequest('POST', 'http://localhost:8080/documents/uploadMultipleDocuments', formdata, {
+    const req = new HttpRequest('POST', 'http://141.22.30.102/spring/documents/uploadMultipleDocuments', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
