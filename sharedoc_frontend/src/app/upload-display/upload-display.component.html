@@ -2,10 +2,8 @@
   <div class="doc" *ngFor="let t of todos">
     <h3>{{ t.documentName }}</h3>
     <h4>{{ t.documentType }}</h4>
-    <a href="" target="_blank"
-      ><button>
-        Open
-      </button></a
-    >
+    <button (click)="saveByteArray(t.documentName, t.data)">
+      Open
+    </button>
   </div>
 </div>
