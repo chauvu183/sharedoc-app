@@ -32,20 +32,21 @@ export class FileService {
     return this.http.get('/*');
   }
 
-
-  uploadFiles(file: File): Observable<HttpEvent<{}>> {
+  uploadFiles(files: FileList): Observable<HttpEvent<{}>> {
     const formdata: FormData = new FormData();
 
-    formdata.append('file', file);
+    for(var i = 0; i < files.length; i++){
+      formdata.append('files', files[i]);
+      console.log(formdata);
+    }
 
-    const req = new HttpRequest('POST', 'http://localhost:8080/documents/uploadMultipleDocuments', formdata, {
+    const req = new HttpRequest('POST', 'http://localhost:8080/documents/uploadDocument', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
 
     return this.http.request(req);
   }
-
 
 
 }
