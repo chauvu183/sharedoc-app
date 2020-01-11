@@ -1,1 +1,38 @@
-<p>pinboard works!</p>
+<body>
+<!-- Note menu -->
+<div class="row" style="margin-top:30px;">
+  <div class="col-md-8">
+    <input type="text"
+           [(ngModel)]="searchText"
+           class="form-control"
+           style="width: 80%; margin-left: 10%; position: center"
+           placeholder="Search notes..."
+    />
+  </div>
+  <div class="col-md-4">
+    <button type="button"
+            (click)="createNote()"
+            class="btn btn-warning pull-right"
+            style="margin-right:20%; background-color: #10777e; border: none"><mat-icon>add_comment</mat-icon> New note
+    </button>
+  </div>
+
+</div>
+
+<!-- Note content -->
+<div class="row" style="margin-top: 6%;">
+  <!-- Notes Panel -->
+  <div class="col-md-9">
+    <div class="row" style="margin-left: 10%">
+      <!-- Note list -->
+      <app-note *ngFor="let n of notes"
+                [note]="n"
+                (noteUpdated)="updateNote($event)"
+                (noteDeleted)="deleteNote($event)"
+      ></app-note>
+
+    </div>
+  </div>
+
+</div>
+</body>

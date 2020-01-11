@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {Routes, RouterModule} from '@angular/router';
 import {HomepageComponent} from '../homepage/homepage.component';
 import {UploadComponent} from '../upload/upload.component';
-import {UploadDisplayComponent} from '../upload-display/upload-display.component';
 import {PinboardComponent} from '../pinboard/pinboard.component';
 
 
@@ -25,10 +24,7 @@ const routes: Routes = [
     path: 'upload',
     component: UploadComponent
   },
-  {
-    path: 'uploadDisplay',
-    component: UploadDisplayComponent
-  }
+
 ];
 
 @NgModule({
