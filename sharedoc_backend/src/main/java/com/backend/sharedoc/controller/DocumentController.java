@@ -35,11 +35,11 @@ public class DocumentController {
   @Autowired
   private DBDocumentRepository dbCodumentRepository;
 
-  @GetMapping
-  public ResponseEntity<?> getDbDocuments() {
-    List<DBDocument> dbDocuments = dbCodumentRepository.findAll();
-    return new ResponseEntity<>(dbDocuments , HttpStatus.OK);
-  }
+  // @GetMapping
+  // public ResponseEntity<?> getDbDocuments() {
+  // List<DBDocument> dbDocuments = dbCodumentRepository.findAll();
+  // return new ResponseEntity<>(dbDocuments, HttpStatus.OK);
+  // }
 
   @PostMapping("/uploadDocument")
   public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
