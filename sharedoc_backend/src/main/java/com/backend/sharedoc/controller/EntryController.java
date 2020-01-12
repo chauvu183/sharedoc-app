@@ -12,6 +12,8 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/pinboard")
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class EntryController {
 
   @Autowired

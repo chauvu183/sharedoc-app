@@ -10,6 +10,8 @@ import { PinboardComponent } from './pinboard/pinboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material';
+
+import { MatCardModule, MatProgressBarModule} from "@angular/material";
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -54,6 +56,8 @@ import { RoutingModule } from './routing/routing.module';
     MatIconModule,
     MatListModule,
     MatTabsModule,
+    MatCardModule,
+    MatProgressBarModule,
     HttpClientModule,
 
     AppRoutingModule,
