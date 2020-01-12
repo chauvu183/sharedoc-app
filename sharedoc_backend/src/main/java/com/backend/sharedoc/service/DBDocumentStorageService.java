@@ -16,6 +16,11 @@ public class DBDocumentStorageService {
   @Autowired
   private DBDocumentRepository dbDocumentRepository;
 
+  @Autowired
+    public DBDocumentStorageService(DBDocumentRepository dbFileRepository) {
+        this.dbDocumentRepository = dbFileRepository;
+    }
+
   public DBDocument storeDocument(MultipartFile file) {
     // Normalize file name
     String fileName = StringUtils.cleanPath(file.getOriginalFilename());

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/documents")
 public class DocumentController {
 
@@ -32,6 +34,12 @@ public class DocumentController {
 
   @Autowired
   private DBDocumentRepository dbCodumentRepository;
+
+  @GetMapping
+  public ResponseEntity<?> getDbDocuments() {
+    List<DBDocument> dbDocuments = dbCodumentRepository.findAll();
+    return new ResponseEntity<>(dbDocuments , HttpStatus.OK);
+  }
 
   @PostMapping("/uploadDocument")
   public UploadDocumentResponse uploadFile(@RequestParam("file") MultipartFile file) {
@@ -50,7 +58,6 @@ public class DocumentController {
 
   @GetMapping("/downloadDocument/{fileId}")
   public ResponseEntity<Resource> downloadFile(@PathVariable String fileId) {
-    // Load file from database
     DBDocument dbFile = DBDocumentStorageService.getDocument(fileId);
 
     return ResponseEntity.ok().contentType(MediaType.parseMediaType(dbFile.getDocumentType()))

@@ -8,8 +8,7 @@ import javax.persistence.*;
 @Table(name = "documents")
 public class DBDocument {
   @Id
-  @GeneratedValue(generator = "uuid")
-  @GenericGenerator(name = "uuid", strategy = "uuid2")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private String id;
 
   private String documentName;
@@ -21,9 +20,12 @@ public class DBDocument {
 
   public DBDocument() {
 
+    super();
+
   }
 
   public DBDocument(String documentName, String documentType, byte[] data) {
+    super();
     this.documentName = documentName;
     this.documentType = documentType;
     this.data = data;
