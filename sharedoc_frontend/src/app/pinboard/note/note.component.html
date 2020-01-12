@@ -6,11 +6,12 @@
       <input type="text"
              [(ngModel)]="note.title"
              (change)="updateNote()"
+             maxlength="100"
              class="input-label-lg"
-             maxlength="18" style="width: 80%"
+             style="width: 80%"
       />
       <a (click)="deleteNote()" class="pull-right text-danger">
-        <i class="fa fa-trash-o"></i>
+        <mat-icon style="color: #ff7968 ">delete_forever</mat-icon>
       </a>
     </div>
     <!-- text -->

@@ -22,7 +22,7 @@ export class ApiService {
     return notes;
   }
   /*
-  
+
     getNotesByNoteId(noteId: string): Observable<Note[]> {
       return this.http.get<Note[]>(this.NOTE_BY_ID + noteId);
     }
@@ -31,7 +31,6 @@ export class ApiService {
 
 
   saveNote(note: Note): Observable<Note> {
-    console.log(note);
     return this.http.post<Note>(this.BASE_URL, note);
     console.log(note);
   }
