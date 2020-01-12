@@ -24,7 +24,7 @@ export class PinboardComponent implements OnInit {
     let newNote: Note = {
       id: null,
       title: "Title",
-      description: "Write some massages here",
+      description: "Write some messages here",
     };
     
     this.apiService.saveNote(newNote).subscribe(
