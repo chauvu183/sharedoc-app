@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 html, body { height: 100%; }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
-  color: #fff;
+body{
+  height: 100%;
+  width: 100%;
+  font-family: Merriweather, Helvetica, Arial, sans-serif;
+  position: absolute;
+  background: #263842;
+  content: "";
+  z-index: 0;
 }
 
 body * {
@@ -22,17 +25,44 @@ body * {
 h1, h2, h3, h4 {
   font-family: Merriweather ,Verdana, Geneva, Tahoma, sans-serif;
 }
+.mat-drawer-container {
+  background-color:#263842;
+  color: white;
+}
 
-.container {
-  padding: 0;
-  width: 100%;
-  /*max-width: 1500px;*/
-  margin: 0 auto;
-  -webkit-box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75);
-  box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75);
-  background: #fff;
-  color:#111;
+/*.container {*/
+  /*padding: 0;*/
+  /*width: 100%;*/
+  /*!*max-width: 1500px;*!*/
+  /*margin: 0 auto;*/
+  /*-webkit-box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75);*/
+  /*-moz-box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75);*/
+  /*box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75);*/
+  /*background: #fff;*/
+  /*color:#111;*/
+/*}*/
+/*
+
+===================
+  Note
+ ==================
+ */
+.list-group-item{
+  cursor: pointer;
+}
+
+.input-label{
+  background:rgba(0,0,0,0);
+  border:none;
+  cursor: pointer;
+}
+
+.input-label-lg{
+  background:rgba(0,0,0,0);
+  border:none;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
 }
 /*
 ===================

@@ -3,6 +3,7 @@ package com.backend.sharedoc.controller;
 import com.backend.sharedoc.exception.ResourceNotFoundException;
 import com.backend.sharedoc.model.Entry;
 import com.backend.sharedoc.repository.EntryRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +23,11 @@ public class EntryController {
   @GetMapping("/entries")
   public Page<Entry> getEntries(Pageable pageable) {
     return entryRepository.findAll(pageable);
+  }
+
+  @GetMapping("/entries/all")
+  public List<Entry> all() {
+    return this.entryRepository.findAll();
   }
 
   @PostMapping("/entries")

@@ -19,7 +19,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { UploadComponent } from './upload/upload.component';
-import { UploadDisplayComponent } from './upload-display/upload-display.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FooterComponent} from './layout/footer/footer.component';
@@ -29,6 +28,7 @@ import {FormsModule} from '@angular/forms';
 import {MainNavComponent} from './layout/main-nav/main-nav.component';
 import {RouterModule} from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
+import { NoteComponent } from './pinboard/note/note.component';
 
 
 
@@ -39,9 +39,9 @@ import { RoutingModule } from './routing/routing.module';
     PinboardComponent,
     HomepageComponent,
     UploadComponent,
-    UploadDisplayComponent,
     FooterComponent,
     MainNavComponent,
+    NoteComponent,
    // FeedbackComponent
   ],
   imports: [
