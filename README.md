@@ -5,7 +5,7 @@
 ## Content
 * Setup
 * [Documents](https://gitlab.informatik.haw-hamburg.de/acm321/sharedoc-app/tree/master/Documents/01_Requirements/01_Analyse)
-* [How to use Git](https://gitlab.informatik.haw-hamburg.de/acm321/sharedoc-app/blob/master/How_to_use_git.md)
+
 
 # Setup
 Description how to start the app in backend and frontend.
